@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <alexpr_simpleshipping>
+                <active>0</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Alexpr\SimpleShipping\Model\Carrier\SimpleCarrier</model>
+                <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
+                <apiuri>https://5d317bb345e2b00014d93f1c.mockapi.io</apiuri>
+                <apiauth>https://5d317bb345e2b00014d93f1c.mockapi.io/auth/</apiauth>
+                <roundrule>up</roundrule>
+                <apiuserid>658764298</apiuserid>
+                <loggerenable>1</loggerenable>
+                <apistoreid>store1</apistoreid>
+            </alexpr_simpleshipping>
+        </carriers>
+    </default>
+</config>

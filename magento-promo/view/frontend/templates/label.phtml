@@ -1,0 +1,23 @@
+<?php
+/** @var \Alexpr\PromoLabel\Block\Label $block */
+?>
+<?php if ($block->isProductPromotional()): ?>
+    <div class="promo" style="width: 100%; height: 100%; margin-bottom: 1em">
+        <span class="promo-label"
+              style="background: <?php echo $block->getLabelBg() ?>;
+                      color: <?php echo $block->getTextColor() ?>;
+                      border-radius: 1em;
+                      font-family: 'Courier New', Courier, monospace;
+                      font-weight: bold;
+                      text-align: center;
+                      padding: .5em .5em .5em .5em;">
+            <?php echo $block->getLabelText() ?>
+        </span>
+        <br/>
+        <span class="promo-timeleft-label"
+              style="position: relative; top: 1em;">
+            <?php echo $block->getTimeleft() ?>
+        </span>
+    </div>
+<?php endif; ?>
+

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+    <system>
+        <section id="carriers" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <group id="alexpr_simpleshipping" translate="label" type="text" sortOrder="2" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Simple shipping module</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="apiuri" translate="label" type="text" sortOrder="1" showInStore="1" showInDefault="1"
+                       showInWebsite="1">
+                    <label>External shipping API URI</label>
+                    <validate>required-entry validate-url</validate>
+                </field>
+                <field id="apiauth" translate="label" type="text" sortOrder="1" showInWebsite="1" showInDefault="1"
+                       showInStore="1">
+                    <label>External shipping API Auth URI</label>
+                    <validate>required-entry validate-url</validate>
+                </field>
+                <field id="apiuserid" translate="label" type="text" sortOrder="1" showInStore="1" showInDefault="1"
+                       showInWebsite="1">
+                    <label>External shipping API User ID</label>
+                    <validate>required-entry validate-number</validate>
+                </field>
+                <field id="apistoreid" translate="label" type="text" sortOrder="1" showInWebsite="1" showInDefault="1"
+                       showInStore="1">
+                    <label>External shipping API Store ID</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="loggerenable" translate="label" type="select" sortOrder="1" showInWebsite="1" showInDefault="1"
+                       showInStore="1">
+                    <label>Log shipping activity?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="roundrule" translate="label" type="select" sortOrder="1" showInWebsite="1" showInDefault="1"
+                       showInStore="1">
+                    <label>Rounding rule for shipping price</label>
+                    <source_model>Alexpr\SimpleShipping\Model\Config\Source\RoundRuleList</source_model>
+                </field>
+                <field id="specificerrmsg" translate="label" type="textarea" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Displayed Error Message</label>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="91" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="92" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+                <field id="mapping" translate="label tooltip" sortOrder="101" showInStore="1" showInDefault="1"
+                       showInWebsite="1">
+                    <label>Custom names for shipping carriers</label>
+                    <frontend_model>Alexpr\SimpleShipping\Block\Adminhtml\System\Config\Form\Field\CustomNameMapping</frontend_model>
+                    <backend_model>Alexpr\SimpleShipping\Model\Config\Field\CustomNameMapping</backend_model>
+                    <tooltip>Map for custom names for shipping carriers.</tooltip>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Alexpr_IssuesHandler::issueshandler" title="Issues" module="Alexpr_IssuesHandler" sortOrder="51"
+             resource="Alexpr_Issueshandler::issueshandler"/>
+        <add id="Alexpr_IssuesHandler::issues" title="Manage Issues" module="Alexpr_IssuesHandler" sortOrder="10"
+             action="issues/issues" resource="Alexpr_IssuesHandler::issues"
+             parent="Alexpr_IssuesHandler::issueshandler"/>
+        <add id="Alexpr_IssuesHandler::issues_configuration" title="Configuration" module="Alexpr_IssuesHandler"
+             sortOrder="99" parent="Alexpr_IssuesHandler::issueshandler"
+             action="adminhtml/system_config/edit/section/issues"
+             resource="Alexpr_IssuesHandler::issues_configuration"/>
+    </menu>
+</config>

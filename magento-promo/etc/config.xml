@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <promolabel>
+            <general>
+                <enable>1</enable>
+                <background>#e67e22</background>
+                <labeltext>PROMO</labeltext>
+                <textcolor>#ffffff</textcolor>
+                <end_date>2019-08-05 00:00:00</end_date>
+            </general>
+        </promolabel>
+    </default>
+</config>

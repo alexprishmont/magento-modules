@@ -1,0 +1,50 @@
+<?php
+/** @var \Alexpr/SizeChart/Block/SizeChart $block */
+$product = $block->getProduct();
+?>
+<?php if ($cmsBlock = $product->getData('size_chart')): ?>
+    <a href="#" id="open-sizechart" class="action primary">
+        Size Chart
+    </a>
+    <div id="popup-modal" style="display: none">
+        <?php
+        echo $block->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId($cmsBlock)
+            ->toHtml();
+        ?>
+    </div>
+
+    <script>
+        require(
+            [
+                'jquery',
+                'Magento_Ui/js/modal/modal'
+            ],
+            function (
+                $,
+                modal
+            ) {
+                let options = {
+                    type: 'popup',
+                    responsive: true,
+                    innerScroll: true,
+                    title: 'Size Chart',
+                    buttons: [{
+                        text: $.mage.__('Continue'),
+                        class: '',
+                        click: function () {
+                            this.closeModal();
+                        }
+                    }]
+                };
+
+                let popup = modal(options, $('#popup-modal'));
+                $("#open-sizechart").on('click', function () {
+                    $("#popup-modal").modal("openModal");
+                });
+
+            }
+        );
+    </script>
+<? endif; ?>

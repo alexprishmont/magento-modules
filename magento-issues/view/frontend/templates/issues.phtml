@@ -1,0 +1,19 @@
+<h3><?php echo $block->headerText() ?></h3>
+
+<form class="form form-login" action="<?php echo $block->getFormAction() ?>" method="post">
+    <div class="control">
+        <input class="input-text" type="text" name="name"
+               placeholder="<?php echo $block->nameTextInputPlaceholder() ?>"/>
+    </div>
+    <div class="control">
+        <input class="input-text" type="email" name="email"
+               placeholder="<?php echo $block->emailTextInputPlaceholder() ?>"/>
+    </div>
+    <div class="control">
+        <textarea style="resize: none;" class="input-text" name="issue_text"
+                  placeholder="<?php echo $block->issueTextAreaPlaceholder() ?>"></textarea>
+    </div>
+    <div class="control">
+        <button type="submit" class="report-button"><?php echo $block->reportButtonText() ?></button>
+    </div>
+</form>

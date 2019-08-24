@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Alexpr" translate="label" sortOrder="10">
+            <label>ALEX PRISMONT</label>
+        </tab>
+        <section id="Alexpr" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Issues handler</label>
+            <tab>Alexpr</tab>
+            <resource>Alexpr_IssuesHandler::issues_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Issues handler configuration</label>
+                <field id="time_to_status_change" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Hours until changing status to 'Urgent'</label>
+                    <validate>validate-digits</validate>
+                </field>
+                <field id="statuses" translate="label tooltip" sortOrder="101" showInStore="1" showInDefault="1"
+                       showInWebsite="1">
+                    <label>Custom names for shipping carriers</label>
+                    <frontend_model>Alexpr\IssuesHandler\Block\Adminhtml\System\Config\Form\Field\StatusMap</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <tooltip>Map for custom names for shipping carriers.</tooltip>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
